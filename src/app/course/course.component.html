@@ -1,0 +1,19 @@
+    <ul>
+        <li *ngFor = "let cour of course " [class.selected]="cour===selectedCourse" (click)="onSelect(cour)">
+            <span>{{cour.id}}</span>
+            {{cour.name}}
+        </li>
+    </ul>
+
+  <div *ngIf="selectedCourse">
+      <h2>{{selectedCourse.name | uppercase}} Details</h2>
+      <div>
+          <span>id: </span>{{selectedCourse.id}}
+      </div>
+
+      <div>
+          <label>Name: </label>
+          <input [(ngModel)]="selectedCourse.name" placeholder="name">
+      </div>
+      
+  </div>  
